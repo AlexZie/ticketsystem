@@ -1,6 +1,5 @@
 # Aufgabenverwaltung besser machen! 
-[![Build Status](https://travis-ci.com/frederikroeper/bp.svg?branch=master)](https://travis-ci.com/frederikroeper/bp)
-[![Coverage Status](https://coveralls.io/repos/github/frederikroeper/bp/badge.png?branch=master)](https://coveralls.io/github/frederikroeper/bp?branch=master)
+[![Build Status](https://travis-ci.org/AlexZie/ticketsystem.svg?branch=master)](https://travis-ci.org/AlexZie/ticketsystem)[![Coverage Status](https://coveralls.io/repos/github/frederikroeper/bp/badge.png?branch=master)](https://coveralls.io/github/frederikroeper/bp?branch=master)
 
 
 # Befehle
