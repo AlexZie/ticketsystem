@@ -1,6 +1,7 @@
 [run]
 omit =
  */ldap/*
+ ./recurrence/managers.py
 
 [report]
 exclude_lines =
