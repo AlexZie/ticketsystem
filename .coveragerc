@@ -2,6 +2,8 @@
 omit =
  */ldap/*
  ./recurrence/managers.py
+ ./recurrence/forms.py
+ ./recurrence/base.py
 
 [report]
 exclude_lines =
