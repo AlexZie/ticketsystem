@@ -1,6 +1,6 @@
 # Aufgabenverwaltung besser machen! 
 [![Build Status](https://travis-ci.org/AlexZie/ticketsystem.svg?branch=master)](https://travis-ci.org/AlexZie/ticketsystem)
-
+[![Coverage Status](https://coveralls.io/repos/github/AlexZie/ticketsystem/badge.png?branch=master)](https://coveralls.io/github/AlexZie/ticketsystem?branch=master)
 
 # Befehle
 
