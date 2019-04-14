@@ -22,7 +22,6 @@ cp -r /path_of_downloads /path_of_project_directory
 Start the virtual environment in the specific directory:
 ```
 virtualenv venv
-cd ~/projectname
 source venv/bin/activate
 ```
 
