@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from django.contrib.messages import constants as messages
+import ldap
+from django_auth_ldap.config import LDAPSearch
 
 # import ldap
 # from django_auth_ldap.config import LDAPSearch, LDAPSearchUnion
@@ -31,22 +33,22 @@ RECURRENCE_I18N_URL = "javascript-catalog"
 SECRET_KEY = '4rnodil4*8rm08cpfzf@(aytxg4zet=xcx_xhrgp(@7y8w%$*f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
-EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = 'Aufgabenverwaltung <bp@frederikroeper.com>'
+DEFAULT_FROM_EMAIL = ''
 EMAIL_USE_TLS = True
 
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'debug-email-messages/'
 
-EMAIL_FOOTER = "TU Darmstadt Fachschaft Informatik"
-ADMIN_EMAIL = "frederik.roeper@stud.tu-darmstadt.de"
+EMAIL_FOOTER = ""
+ADMIN_EMAIL = ""
 
 EMAIL_TAG = "[Ticketsystem]"
 
@@ -137,22 +139,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 AUTHENTICATION_BACKENDS = [
-    # 'django_auth_ldap.backend.LDAPBackend',
+    'django_auth_ldap.backend.LDAPBackend',
     'django.contrib.auth.backends.ModelBackend'
 ]
 
-# AUTH_LDAP_SERVER_URI = ""
+AUTH_LDAP_SERVER_URI = ""
 
-# AUTH_LDAP_BIND_DN = ""
-# AUTH_LDAP_BIND_PASSWORD = ""
-# AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=users,dc=example,dc=com",
-#     ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+AUTH_LDAP_BIND_DN = ""
+AUTH_LDAP_BIND_PASSWORD = ""
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=users,dc=example,dc=com",
+                                   ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
 
-
-# AUTH_LDAP_USER_SEARCH = LDAPSearchUnion(
-#     LDAPSearch("ou=users,dc=example,dc=com", ldap.SCOPE_SUBTREE, "(uid=%(user)s)"),
-#     LDAPSearch("ou=otherusers,dc=example,dc=com", ldap.SCOPE_SUBTREE, "(uid=%(user)s)"),
-# )
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
