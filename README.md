@@ -28,7 +28,7 @@ source venv/bin/activate
 
 With the new terminal look (like: (venv)username@hostname:~/projectname) you are ready to install the requirements:
 ```
-cd ticketsystem
+cd /ticketsystem
 
 pip3 install -r requirements.txt
 ```
@@ -36,7 +36,7 @@ pip3 install -r requirements.txt
 Now all requirements for the project are downloaded and installed.
 Open settings within mysite:
 ```
-cd /mysite/
+cd /mysite
 ```
 
 Edit the settings.py file with an editor and enter your site configurations:
