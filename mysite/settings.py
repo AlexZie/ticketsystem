@@ -33,7 +33,7 @@ RECURRENCE_I18N_URL = "javascript-catalog"
 SECRET_KEY = '4rnodil4*8rm08cpfzf@(aytxg4zet=xcx_xhrgp(@7y8w%$*f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -143,13 +143,15 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend'
 ]
 
-AUTH_LDAP_SERVER_URI = ""
-
-AUTH_LDAP_BIND_DN = ""
+# LDAP Config
+AUTH_LDAP_SERVER_URI = "ldap://ldap.d120.de"
+AUTH_LDAP_BIND_DN = "cn=pyofahrt,ou=Services,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de"
 AUTH_LDAP_BIND_PASSWORD = ""
-AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=users,dc=example,dc=com",
-                                   ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
-
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=People,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de",
+    ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+AUTH_LDAP_GROUP_SEARCH = LDAPSearch("ou=Groups,dc=fachschaft,dc=com",
+    ldap.SCOPE_SUBTREE, "(objectClass=groupOfNames)"
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
