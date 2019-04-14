@@ -34,6 +34,34 @@ pip3 install -r requirements.txt
 ```
 
 Now all requirements for the project are downloaded and installed.
+Open settings within mysite:
+```
+cd /mysite/
+```
+
+Edit the settings.py file with an editor and enter your site configurations:
+```
+BASE_URL = ""
+ALLOWED_HOSTS = []
+```
+
+To enable the email summary functionality. You have to set the parameters for your email host:
+```
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = ''
+```
+
+To connect the ticketsytem with an LDAP the following parameters must be set.
+```
+AUTH_LDAP_SERVER_URI = ""
+AUTH_LDAP_BIND_DN = ""
+AUTH_LDAP_BIND_PASSWORD = ""
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=users,dc=example,dc=com",
+                                   ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+```
+
 The database must be updated:
 ```
 python3 manage.py makemigrations
@@ -44,17 +72,4 @@ python3 manage.py migrate
 Create an admin to control the ticketsystem:
 ```
 python3 manage.py createsuperuser
-```
-
-# Testing
-
-```
- coverage run --source='.' manage.py test
- coverage html
-  
-```
-# Install Selenium 
-
-https://christopher.su/2015/selenium-chromedriver-ubuntu/
-
 ```
