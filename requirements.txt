@@ -21,6 +21,5 @@ coverage
 django-recurrence
 bleach
 python-coveralls
-django-auth-ldap
 selenium
 pyvirtualdisplay
