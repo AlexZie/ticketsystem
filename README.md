@@ -73,3 +73,12 @@ Create an admin to control the ticketsystem:
 ```
 python3 manage.py createsuperuser
 ```
+
+Run the server:
+```
+To run local on 127.0.0.1:
+python3 manage.py runserver
+
+To run on your server for example 12.12.134.11
+python3 manage.py runserver 12.12.134.11
+```
