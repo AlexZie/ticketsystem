@@ -1,24 +1,49 @@
-# Aufgabenverwaltung besser machen! 
+# Make task management better! 
 [![Build Status](https://travis-ci.org/AlexZie/ticketsystem.svg?branch=master)](https://travis-ci.org/AlexZie/ticketsystem)
 [![Coverage Status](https://coveralls.io/repos/github/AlexZie/ticketsystem/badge.svg?branch=master)](https://coveralls.io/github/AlexZie/ticketsystem?branch=master)
 # Installation
 
-Um den Server zu starten, innerhalb des /mysite Ordners folgenden Befehl ausführen:
+Install a virtual environment:
 ```
-python3 manage.py runserver
+sudo pip3 install virtualenv
 ```
 
-Um die Datenbank zu aktualisieren folgenden zwei Befehl ausführen:
+Create a new project directory:
+```
+mkdir ~/projectname
+cd ~/projectname
+```
+
+Download the repo and move the project into that directory:
+```
+cp -r /path_of_downloads /path_of_project_directory
+```
+
+Start the virtual environment in the specific directory:
+```
+virtualenv venv
+cd ~/projectname
+source venv/bin/activate
+```
+
+With the new terminal look (like: (venv)username@hostname:~/projectname) you are ready to install the requirements:
+```
+cd ticketsystem
+
+pip3 install -r requirements.txt
+```
+
+Now all requirements for the project are downloaded and installed.
+The database must be updated:
 ```
 python3 manage.py makemigrations
-```
-```
 python3 manage.py migrate
 ```
 
-Um eine App zustarten folgenden Befehl ausführen (ohne Anführungszeichen):
+
+Create an admin to control the ticketsystem:
 ```
-python3 manage.py startapp "appname"
+python3 manage.py createsuperuser
 ```
 
 # Testing
