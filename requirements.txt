@@ -21,5 +21,4 @@ coverage
 django-recurrence
 bleach
 python-coveralls
-selenium
-pyvirtualdisplay
+
