@@ -21,7 +21,8 @@ from django_auth_ldap.config import LDAPSearch
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-BASE_URL = "http://127.0.0.1:8000"
+# IP From Docker machine
+BASE_URL = "http://192.168.99.100:8000"
 
 # Localization for Recurrence Widget
 RECURRENCE_I18N_URL = "javascript-catalog"
@@ -35,7 +36,8 @@ SECRET_KEY = '4rnodil4*8rm08cpfzf@(aytxg4zet=xcx_xhrgp(@7y8w%$*f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# IP From Docker machine
+ALLOWED_HOSTS = ['192.168.99.100']
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
